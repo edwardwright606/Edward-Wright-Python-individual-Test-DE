@@ -1,5 +1,5 @@
 #=====================================================
-#All Users
+#All Users (active and disabled)
 active_users = [
     {"username": "Fred", "status": "active"},
     {"username": "Bob", "status": "active"}
@@ -8,6 +8,7 @@ disabled_users = [
     {"username": "Joe", "status": "disabled"},
     {"username": "Alex", "status": "disabled"}
 ]
+#Empty list to add a user before appending to the correct list. 
 new_user = []
 #=====================================================
 #Functions 
@@ -38,7 +39,7 @@ def edit_user_status():
     print("1.Disable a user")
     print("2.Enable a user")
     edit_user_choice = input("Enter your Choice ")
-    #User wants to disable
+    #User wants to disable a user
     if edit_user_choice == "1":
         print("Active Users:")
         for user in active_users:
@@ -53,7 +54,7 @@ def edit_user_status():
                 active_users.remove(user)     
                 print(f"Done! {user_to_update} is now disabled.")
 
-    #user wants to enable
+    #user wants to enable a user
     elif edit_user_choice == "2":
         print("Disabled Users")
         for user in disabled_users:
@@ -81,7 +82,7 @@ def add_users():
 Is_App_Running = True 
 
 while Is_App_Running == True:
-    #Print Main Menu
+    #Print Main Menu and get user choice. 
     main_menu()
     user_choice = int(input("Select 0, 1, 2 or 3: "))
     #If else statments for user choice to call the functions i wrote above
